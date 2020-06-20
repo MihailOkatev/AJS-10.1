@@ -1,8 +1,8 @@
 import { GameSavingLoader } from '../GameSavingLoader';
 
 test('should work correct', (done) => {
-  const result = GameSavingLoader.load().then((saving) => saving);
-
+  let result = GameSavingLoader.load().then((saving) => saving);
+  result = JSON.parse(result);
   expect(result).toEqual({
     id: 9,
     created: 1546300800,
